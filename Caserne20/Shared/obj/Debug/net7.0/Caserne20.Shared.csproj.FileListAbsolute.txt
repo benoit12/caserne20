@@ -1,0 +1,12 @@
+D:\OneDrive\Documents\Repos\Caserne20\Caserne20\Shared\bin\Debug\net7.0\Caserne20.Shared.deps.json
+D:\OneDrive\Documents\Repos\Caserne20\Caserne20\Shared\bin\Debug\net7.0\Caserne20.Shared.dll
+D:\OneDrive\Documents\Repos\Caserne20\Caserne20\Shared\bin\Debug\net7.0\Caserne20.Shared.pdb
+D:\OneDrive\Documents\Repos\Caserne20\Caserne20\Shared\obj\Debug\net7.0\Caserne20.Shared.csproj.AssemblyReference.cache
+D:\OneDrive\Documents\Repos\Caserne20\Caserne20\Shared\obj\Debug\net7.0\Caserne20.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\OneDrive\Documents\Repos\Caserne20\Caserne20\Shared\obj\Debug\net7.0\Caserne20.Shared.AssemblyInfoInputs.cache
+D:\OneDrive\Documents\Repos\Caserne20\Caserne20\Shared\obj\Debug\net7.0\Caserne20.Shared.AssemblyInfo.cs
+D:\OneDrive\Documents\Repos\Caserne20\Caserne20\Shared\obj\Debug\net7.0\Caserne20.Shared.csproj.CoreCompileInputs.cache
+D:\OneDrive\Documents\Repos\Caserne20\Caserne20\Shared\obj\Debug\net7.0\Caserne20.Shared.dll
+D:\OneDrive\Documents\Repos\Caserne20\Caserne20\Shared\obj\Debug\net7.0\refint\Caserne20.Shared.dll
+D:\OneDrive\Documents\Repos\Caserne20\Caserne20\Shared\obj\Debug\net7.0\Caserne20.Shared.pdb
+D:\OneDrive\Documents\Repos\Caserne20\Caserne20\Shared\obj\Debug\net7.0\ref\Caserne20.Shared.dll

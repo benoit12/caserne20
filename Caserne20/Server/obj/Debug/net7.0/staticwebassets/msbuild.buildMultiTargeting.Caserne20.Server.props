@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Caserne20.Server.props" />
+</Project>

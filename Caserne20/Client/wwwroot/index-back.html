@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Carte Caserne 20</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script>
+    async function fetchApiKey() {
+      try {
+        // Fetch the API key from the Azure App Configuration
+        //const response = await fetch('/.azureappconfig/configurations/latest?keys=GoogleMapsApiKey');
+        //const data = await response.json();
+        const apiKey = 'AIzaSyCbdRtwoOwKG2HIoS2RGdXj-HPu6HEmYjg'; //data['GoogleMapsApiKey'];
+
+        // Replace the placeholder with the actual API key in the Google Maps script URL
+        const googleMapsScript = document.createElement('script');
+        googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
+        googleMapsScript.defer = true;
+        googleMapsScript.async = true;
+        document.body.appendChild(googleMapsScript);
+      } catch (error) {
+        console.error('Error fetching the API key:', error);
+      }
+    }
+
+    function initMap() {
+		const image = {
+		url: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+		// This marker is 20 pixels wide by 32 pixels high.
+		size: new google.maps.Size(20, 32),
+		// The origin for this image is (0, 0).
+		origin: new google.maps.Point(0, 0),
+		// The anchor for this image is the base of the flagpole at (0, 32).
+		anchor: new google.maps.Point(0, 32),
+	  };
+	
+      // Set the default starting location to Sainte-Marthe, QC, J0P1W0
+      const mapCenter = { lat: 45.3711, lng: -74.3331 };
+
+      // Create a new map instance
+      const map = new google.maps.Map(document.getElementById('map'), {
+        center: mapCenter,
+        zoom: 12, // Zoom level (0 = World view, 20 = Building view)
+		
+        // Customize the map style to hide points of interest
+        styles: [
+          {
+            featureType: 'poi',
+            elementType: 'labels',
+            stylers: [{ visibility: 'off' }]
+          }
+        ]
+      });
+
+      // Create a marker at the center of the map
+      const caserne20 = new google.maps.Marker({
+        position: { lat: 45.37309647373225, lng: -74.40389030667039},
+        map: map,
+		icon: image,
+		label: 'Caserne 20',
+        title: 'Caserne 20'
+      });
+
+      // Create an info window for the marker
+      const infoWindow = new google.maps.InfoWindow({
+        content: 'Caserne 20 Sainte-Justine-de-Newton'
+      });
+
+      // Open the info window when the marker is clicked
+      caserne20.addListener('click', function() {
+        infoWindow.open(map, caserne20);
+      });
+	  
+	  const flightPlanCoordinates = [
+		{ lat: 45.420076473901574, lng: -74.42824582466275 },
+		{ lat: 45.3390311749549, lng: -74.2570364204192 },
+		{ lat: 45.3067263332866, lng: -74.26593218958389 },
+		{ lat: 45.356699012541974, lng: -74.33654506539195 }, 
+		{ lat: 45.304855777312696, lng: -74.47138952817637 },
+		{ lat: 45.420076473901574, lng: -74.42824582466275 },
+	  ];
+	  const flightPath = new google.maps.Polyline({
+		path: flightPlanCoordinates,
+		geodesic: true,
+		strokeColor: "#FF0000",
+		strokeOpacity: 1.0,
+		strokeWeight: 2,
+	  });
+
+	  flightPath.setMap(map);
+    }
+
+    // Call the fetchApiKey function to get the API key and load the Google Maps script
+    fetchApiKey();
+  </script>
+</body>
+</html>
